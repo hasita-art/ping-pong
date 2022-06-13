@@ -1,0 +1,11 @@
+.heading{
+    width: 100%;
+}
+
+.heading h2{
+    display: inline;
+}
+
+.heading button{
+    float: right;
+}
