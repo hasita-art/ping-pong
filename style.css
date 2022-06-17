@@ -9,3 +9,18 @@
 .heading button{
     float: right;
 }
+
+#replay{
+    border-radius: 10px;
+    color: black;
+}
+
+.modal-dialog{
+    width: 90%;
+}
+
+h4{
+    background-color: whitesmoke;
+    line-height : 2;
+    margin : 0px;
+}
