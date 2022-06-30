@@ -24,3 +24,8 @@ h4{
     line-height : 2;
     margin : 0px;
 }
+
+canvas{
+    border: 2px solid beige;
+    box-shadow: 5px 5px 5px grey;
+}

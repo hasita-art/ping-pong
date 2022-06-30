@@ -1,5 +1,6 @@
-
-/*created by prashant shukla */
+right_wristX = "";
+right_wristY = "";
+score_right_wrist = "";
 
 var paddle2 =10,paddle1=10;
 
@@ -29,13 +30,30 @@ function setup(){
   video.hide();
 
   poseNet = ml5.poseNet(video, modelLoaded);
+  poseNet.on('pose', gotPoses);
 }
 
 function modelLoaded(){
   console.log("Model Loaded!");
 }
 
+function gotPoses(results){
+  if(results.length > 0){
+    console.log(results);
+    right_wristX = results[0].pose.rightWrist.x;
+    right_wristY = results[0].pose.rightWrist.y;
+
+    score_right_wrist = results[0].pose.keypoints[10].score;
+  }
+}
+
 function draw(){
+  if(score_right_wrist > 0.2){
+    fill("c078aa");
+    stroke("bbbdc4");
+    circle(right_wristX, right_wristY, 20);
+  }
+
   image(0,0,700,600)
  background(0); 
 
